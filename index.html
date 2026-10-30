@@ -8,6 +8,33 @@
 <meta name="description" content="RAFI BROH - Cybersecurity, Technology and Digital Creator Portfolio.">
 <title>RAFI BROH | Personal Portfolio</title>
 
+/* Social Media Section */
+.social-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 20px;
+  background: #101a2a;
+  border: 1px solid #23354a;
+  border-radius: 8px;
+  color: #35e6bd;
+  font-size: 14px;
+  transition: .3s;
+}
+.social-link:hover {
+  background: #35e6bd;
+  color: #071019;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px #35e6bd30;
+}
+
 <style>
 :root {
   --bg:#070b14;
@@ -155,6 +182,47 @@ section{padding:85px 0;scroll-margin-top:70px}
 }
 .education h3{color:var(--green)}
 .education p{color:var(--muted);font-size:14px}
+
+<section id="social">
+  <div class="container">
+    <div class="section-title">
+      <small>LET'S CONNECT</small>
+      <h2>Find Me On <span>Social Media</span></h2>
+    </div>
+
+    <div class="social-section">
+      <a class="social-link"
+         href="https://www.facebook.com/SMR4FI"
+         target="_blank" rel="noopener">
+         Facebook ↗
+      </a>
+
+      <a class="social-link"
+         href="https://www.instagram.com/user_563477"
+         target="_blank" rel="noopener">
+         Instagram ↗
+      </a>
+
+      <a class="social-link"
+         href="https://github.com/sayedmohamadrafi"
+         target="_blank" rel="noopener">
+         GitHub ↗
+      </a>
+
+      <a class="social-link"
+         href="https://t.me/CRIMINALRAFI"
+         target="_blank" rel="noopener">
+         Telegram ↗
+      </a>
+
+      <a class="social-link"
+         href="https://wa.me/8801771203580"
+         target="_blank" rel="noopener">
+         WhatsApp ↗
+      </a>
+    </div>
+  </div>
+</section>
 
 /* Contact */
 .contact-box{
