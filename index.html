@@ -2,505 +2,1017 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d18">
-<meta name="description" content="RAFI BROH - Cybersecurity, Technology and Digital Creator Portfolio.">
-<title>RAFI BROH | Personal Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Social Media Section */
-.social-section {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 30px;
-}
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 13px 20px;
-  background: #101a2a;
-  border: 1px solid #23354a;
-  border-radius: 8px;
-  color: #35e6bd;
-  font-size: 14px;
-  transition: .3s;
-}
-.social-link:hover {
-  background: #35e6bd;
-  color: #071019;
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px #35e6bd30;
-}
+  <title>RAFI BROH | Cybersecurity & Technology Portfolio</title>
 
-<style>
-:root {
-  --bg:#070b14;
-  --panel:#101a2a;
-  --green:#35e6bd;
-  --cyan:#36cfff;
-  --white:#f1f7ff;
-  --muted:#9aaabe;
-  --border:#23354a;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--white);
-  font-family:Arial,sans-serif;
-  line-height:1.7;
-  overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
-.container{width:88%;max-width:1100px;margin:auto}
+  <meta name="description" content="Official portfolio of RAFI BROH — Student, Technology Enthusiast, and Cybersecurity Learner.">
+  <meta name="theme-color" content="#080d13">
 
-/* Navigation */
-nav{
-  position:sticky;top:0;z-index:100;
-  background:#070b14ed;
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.nav-inner{
-  min-height:72px;
-  display:flex;justify-content:space-between;
-  align-items:center;
-}
-.logo{font-size:24px;font-weight:800;color:var(--green)}
-.logo span{color:white}
-.nav-links{display:flex;gap:22px}
-.nav-links a{font-size:13px;color:var(--muted)}
-.nav-links a:hover{color:var(--green)}
-.menu-btn{
-  display:none;background:none;color:var(--green);
-  border:1px solid var(--border);padding:7px 12px;
-  border-radius:5px;font-size:20px;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-/* Hero */
-.hero{
-  min-height:87vh;
-  display:flex;align-items:center;
-  position:relative;
-  background:
-  radial-gradient(circle at 80% 35%,#123f3940,transparent 35%),
-  radial-gradient(circle at 15% 80%,#123e6b30,transparent 35%);
-}
-.hero-content{
-  display:grid;grid-template-columns:1.4fr .8fr;
-  align-items:center;gap:45px;
-}
-.eyebrow{
-  color:var(--green);letter-spacing:4px;
-  font-size:12px;font-weight:bold;
-}
-h1{
-  font-size:clamp(42px,7vw,76px);
-  line-height:1.12;margin:20px 0;
-}
-h1 span{color:var(--green)}
-.typing{color:var(--cyan);font-size:clamp(18px,3vw,25px)}
-.hero p{color:var(--muted);margin-top:17px;max-width:580px}
-.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
-.btn{
-  padding:12px 22px;border-radius:6px;
-  border:1px solid var(--green);
-  color:var(--green);display:inline-block;
-  font-size:14px;transition:.3s;
-}
-.btn.primary{background:var(--green);color:#071019}
-.btn:hover{transform:translateY(-3px);box-shadow:0 5px 25px #35e6bd30}
+  <style>
+    :root {
+      --bg: #080d13;
+      --surface: #101923;
+      --surface2: #14212d;
+      --green: #00ff9c;
+      --cyan: #00d9ff;
+      --text: #f1f5f9;
+      --muted: #9aabb9;
+      --border: rgba(0,255,156,.16);
+    }
 
-/* Profile */
-.profile-wrap{
-  display:flex;justify-content:center;
-  position:relative;
-}
-.profile{
-  width:min(290px,70vw);
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:50%;
-  border:3px solid var(--green);
-  padding:7px;
-  background:var(--panel);
-  box-shadow:0 0 35px #35e6bd35;
-}
-.profile-glow{
-  position:absolute;width:320px;height:320px;
-  border:1px dashed #35e6bd65;
-  border-radius:50%;
-  animation:rotate 25s linear infinite;
-}
-@keyframes rotate{to{transform:rotate(360deg)}}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-/* Sections */
-section{padding:85px 0;scroll-margin-top:70px}
-.section-title{text-align:center;margin-bottom:40px}
-.section-title small{color:var(--green);letter-spacing:3px}
-.section-title h2{font-size:34px;margin-top:8px}
-.section-title h2 span{color:var(--green)}
-.about-text{
-  max-width:800px;margin:auto;text-align:center;
-  color:var(--muted);font-size:16px;
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-.card{
-  background:var(--panel);
-  border:1px solid var(--border);
-  padding:25px;border-radius:12px;
-  transition:.3s;
-}
-.card:hover{
-  border-color:var(--green);
-  transform:translateY(-5px);
-}
-.card .symbol{font-size:28px;margin-bottom:12px}
-.card h3{color:var(--green);margin-bottom:10px;font-size:19px}
-.card p{color:var(--muted);font-size:14px}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-/* Skills */
-.skill{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:8px;padding:15px;
-  color:var(--white);font-size:14px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* Education */
-.education{
-  max-width:700px;margin:auto;
-  border-left:2px solid var(--green);
-  padding:5px 0 5px 25px;
-}
-.education h3{color:var(--green)}
-.education p{color:var(--muted);font-size:14px}
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
 
-<section id="social">
-  <div class="container">
-    <div class="section-title">
-      <small>LET'S CONNECT</small>
-      <h2>Find Me On <span>Social Media</span></h2>
-    </div>
+    .highlight {
+      color: var(--green);
+    }
 
-    <div class="social-section">
-      <a class="social-link"
-         href="https://www.facebook.com/SMR4FI"
-         target="_blank" rel="noopener">
-         Facebook ↗
-      </a>
+    .section {
+      padding: 95px 0;
+      scroll-margin-top: 75px;
+    }
 
-      <a class="social-link"
-         href="https://www.instagram.com/user_563477"
-         target="_blank" rel="noopener">
-         Instagram ↗
-      </a>
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
 
-      <a class="social-link"
-         href="https://github.com/sayedmohamadrafi"
-         target="_blank" rel="noopener">
-         GitHub ↗
-      </a>
+    .section-title h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(25px, 4vw, 36px);
+      margin-bottom: 10px;
+    }
 
-      <a class="social-link"
-         href="https://t.me/CRIMINALRAFI"
-         target="_blank" rel="noopener">
-         Telegram ↗
-      </a>
+    .section-title p {
+      color: var(--muted);
+    }
 
-      <a class="social-link"
-         href="https://wa.me/8801771203580"
-         target="_blank" rel="noopener">
-         WhatsApp ↗
-      </a>
-    </div>
-  </div>
-</section>
+    .section-title span {
+      color: var(--green);
+    }
 
-/* Contact */
-.contact-box{
-  max-width:650px;margin:auto;text-align:center;
-  background:var(--panel);
-  padding:35px 20px;border-radius:12px;
-  border:1px solid var(--border);
-}
-.contact-box p{color:var(--muted);margin:12px 0 20px}
+    /* NAVBAR */
 
-footer{
-  text-align:center;padding:28px 10px;
-  border-top:1px solid var(--border);
-  color:var(--muted);font-size:13px;
-}
-footer span{color:var(--green)}
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8,13,19,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
 
-@media(max-width:700px){
-  .container{width:90%}
-  .nav-inner{min-height:65px}
-  .menu-btn{display:block}
-  .nav-links{
-    display:none;position:absolute;top:65px;left:0;
-    width:100%;padding:20px;
-    background:#0b1422;
-    flex-direction:column;gap:15px;
-    border-bottom:1px solid var(--border);
-  }
-  .nav-links.show{display:flex}
-  .hero{padding:65px 0;min-height:auto}
-  .hero-content{grid-template-columns:1fr;text-align:center;gap:40px}
-  .hero p{margin:15px auto}
-  .actions{justify-content:center}
-  .profile{width:220px}
-  .profile-glow{width:245px;height:245px}
-  section{padding:65px 0}
-  .section-title h2{font-size:28px}
-}
-</style>
+    nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      color: var(--green);
+      border: 1px solid var(--border);
+      padding: 7px 12px;
+      font-size: 22px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 115px 0 70px;
+      background:
+        radial-gradient(circle at 80% 40%, rgba(0,255,156,.10), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(0,217,255,.08), transparent 30%);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid var(--border);
+      color: var(--green);
+      background: rgba(0,255,156,.06);
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      color: var(--cyan);
+      font-size: clamp(17px, 3vw, 24px);
+      margin-bottom: 15px;
+    }
+
+    .typing {
+      color: var(--green);
+      border-right: 2px solid var(--green);
+      padding-right: 4px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 590px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .3s;
+      border: 1px solid var(--green);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #06120d;
+    }
+
+    .btn-outline {
+      color: var(--green);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,255,156,.18);
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-frame {
+      width: min(310px, 75vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      padding: 8px;
+      border: 2px solid var(--green);
+      box-shadow: 0 0 35px rgba(0,255,156,.17);
+      background: var(--surface);
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* ABOUT */
+
+    .about-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-text, .info-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 28px;
+    }
+
+    .about-text h3 {
+      color: var(--green);
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .info-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: var(--green);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: .3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--green);
+    }
+
+    .skill-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .skill-card h3 {
+      color: var(--green);
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 28px;
+      transition: .3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--green);
+      box-shadow: 0 10px 30px rgba(0,255,156,.08);
+    }
+
+    .project-number {
+      color: var(--green);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .project-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .project-tags span {
+      font-size: 11px;
+      color: var(--green);
+      background: rgba(0,255,156,.07);
+      border: 1px solid var(--border);
+      padding: 5px 9px;
+      border-radius: 5px;
+    }
+
+    .project-link {
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      color: var(--green);
+    }
+
+    /* EDUCATION */
+
+    .education-card {
+      max-width: 700px;
+      margin: auto;
+      background: var(--surface);
+      border-left: 3px solid var(--green);
+      border-radius: 10px;
+      padding: 27px;
+    }
+
+    .education-card h3 {
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* SOCIAL MEDIA */
+
+    .social-section {
+      background: rgba(16,25,35,.55);
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .social-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 10px;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .social-card:hover {
+      border-color: var(--green);
+      transform: translateY(-5px);
+      background: var(--surface2);
+    }
+
+    .social-icon {
+      font-size: 27px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .social-card strong {
+      display: block;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .social-card small {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      max-width: 650px;
+      margin: auto;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 35px 25px;
+      border-radius: 13px;
+    }
+
+    .contact-box h3 {
+      color: var(--green);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 23px;
+    }
+
+    .email-link {
+      color: var(--cyan);
+      display: block;
+      margin-bottom: 23px;
+      overflow-wrap: anywhere;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 25px 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: var(--green);
+    }
+
+    /* ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 800px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #0c141d;
+        flex-direction: column;
+        padding: 20px;
+        gap: 17px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 35px;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        grid-row: 1;
+      }
+
+      .image-frame {
+        width: 220px;
+      }
+
+      .about-box {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media(max-width: 520px) {
+      .section {
+        padding: 70px 0;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .about-text, .info-box {
+        padding: 21px;
+      }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="container nav-inner">
-    <a href="#home" class="logo">RAFI<span>BROH.</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">RAFI BROH<span>.</span></a>
 
-<main>
-<section class="hero" id="home">
-  <div class="container hero-content">
-    <div>
-      <div class="eyebrow">WELCOME TO MY DIGITAL WORLD</div>
-      <h1>I'm <span>RAFI BROH</span></h1>
-      <div class="typing">
-        <span id="typingText">Technology Enthusiast</span>
-      </div>
-      <p>
-        Passionate about Cybersecurity, Digital Technology,
-        Social Media Management and Web Development.
-        Exploring ideas, learning new skills and building
-        meaningful digital projects.
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="#projects">Explore My Work</a>
-        <a class="btn" href="#contact">Contact Me</a>
-      </div>
-    </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
 
-    <div class="profile-wrap">
-      <div class="profile-glow"></div>
-      <img class="profile"
-           src="rafi-broh.png"
-           alt="RAFI BROH Profile Picture">
-    </div>
-  </div>
-</section>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#social">Social Media</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="about">
-  <div class="container">
-    <div class="section-title">
-      <small>WHO AM I?</small>
-      <h2>About <span>Me</span></h2>
-    </div>
-    <p class="about-text">
-      I'm Rafi, a student at Chattogram Polytechnic Institute (CPI)
-      and a technology enthusiast. I'm interested in Cybersecurity,
-      Digital Communication, Social Media Management and Web Development.
-      I enjoy exploring technology, solving problems and continuously
-      improving my skills through learning and practical projects.
-      My goal is to grow as a technology professional and create
-      useful digital solutions.
-    </p>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
 
-<section id="skills">
-  <div class="container">
-    <div class="section-title">
-      <small>WHAT I EXPLORE</small>
-      <h2>My <span>Skills & Interests</span></h2>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="symbol">🔐</div>
-        <h3>Cybersecurity</h3>
-        <p>Exploring cyber safety, security awareness and ethical hacking concepts.</p>
-      </div>
-      <div class="card">
-        <div class="symbol">💻</div>
-        <h3>Web Development</h3>
-        <p>Learning HTML, CSS, JavaScript and building responsive websites.</p>
-      </div>
-      <div class="card">
-        <div class="symbol">📱</div>
-        <h3>Social Media</h3>
-        <p>Social Media Management, platform support and digital communication.</p>
-      </div>
-      <div class="card">
-        <div class="symbol">🌐</div>
-        <h3>Digital Technology</h3>
-        <p>Exploring online platforms, digital tools and technology solutions.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="hero-text">
+        <span class="hero-tag">WELCOME TO MY DIGITAL WORLD</span>
 
+        <h1>RAFI <span class="highlight">BROH</span></h1>
 
-<section id="projects">
-  <div class="container">
-    <div class="section-title">
-      <small>MY WORK & CREATIONS</small>
-      <h2>Featured <span>Projects</span></h2>
-      <p style="color:#9aaabe;margin-top:10px">
-        Explore my digital work and creative journey.
-      </p>
-    </div>
+        <h2>I'm a <span class="typing" id="typing"></span></h2>
 
-    <div class="cards">
-
-      <!-- Project 01 -->
-      <div class="card">
-        <div class="symbol">💻</div>
-        <h3>Personal Portfolio Website</h3>
         <p>
-          My personal portfolio website showcasing my
-          identity, technical interests, skills and
-          digital projects.
+          A student and technology enthusiast with a growing interest
+          in cybersecurity, web development, and digital platforms.
+          I enjoy learning new technologies, exploring ideas, and
+          building skills through practical projects.
         </p>
-        <p style="color:#35e6bd;margin-top:15px">
-          HTML • CSS • JavaScript • GitHub Pages
-        </p>
-        <a class="btn"
-           href="https://sayedmohamadrafi.github.io/"
-           target="_blank" rel="noopener">
-          View Live Project ↗
-        </a>
+
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">Explore Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
       </div>
 
-      <!-- Project 02 -->
-      <div class="card">
-        <div class="symbol">🚀</div>
-        <h3>RAFI BROH Digital Brand</h3>
+      <div class="hero-image">
+        <div class="image-frame">
+          <img src="rafi-broh.png" alt="RAFI BROH profile photo">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>ABOUT <span>ME</span></h2>
+        <p>Discover my journey, interests, and goals.</p>
+      </div>
+
+      <div class="about-box reveal">
+
+        <div class="about-text">
+          <h3>Who Am I?</h3>
+
+          <p>
+            Hello! I'm RAFI BROH, a student at Chattogram Polytechnic
+            Institute (CPI) and a technology enthusiast.
+          </p>
+
+          <p>
+            My interests include cybersecurity, social media management,
+            digital communication, web development, and online platform
+            management.
+          </p>
+
+          <p>
+            I believe in continuous learning, creative problem-solving,
+            and using technology to build meaningful digital projects.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <div class="info-item"><strong>Name:</strong> RAFI BROH</div>
+          <div class="info-item"><strong>Education:</strong> Chattogram Polytechnic Institute</div>
+          <div class="info-item"><strong>Interests:</strong> Cybersecurity & Technology</div>
+          <div class="info-item"><strong>Focus:</strong> Learning & Practical Projects</div>
+          <div class="info-item"><strong>Location:</strong> Bangladesh</div>
+          <div class="info-item"><strong>Email:</strong> ceorafibroh@gmail.com</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>SKILLS & <span>INTERESTS</span></h2>
+        <p>Technologies and areas I am exploring.</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">🛡️</div>
+          <h3>Cybersecurity</h3>
+          <p>Learning cyber safety, security awareness, and ethical cybersecurity concepts.</p>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">💻</div>
+          <h3>Web Development</h3>
+          <p>Exploring HTML, CSS, JavaScript, and responsive website development.</p>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">📱</div>
+          <h3>Social Media</h3>
+          <p>Interested in social media management, platform support, and digital growth.</p>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">🌐</div>
+          <h3>Digital Communication</h3>
+          <p>Exploring online communication, digital platforms, and content strategy.</p>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">⚙️</div>
+          <h3>Technology</h3>
+          <p>Learning modern tools, digital solutions, and practical technology skills.</p>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">🚀</div>
+          <h3>Problem Solving</h3>
+          <p>Building logical thinking and finding practical solutions through learning.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT SHOWCASE -->
+  <section class="section" id="projects">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>MY <span>PROJECTS</span></h2>
+        <p>Some of my digital projects and initiatives.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-number">PROJECT 01</div>
+
+          <h3>Personal Portfolio Website</h3>
+
+          <p>
+            My personal portfolio website, created to introduce myself,
+            showcase my interests, share my projects, and connect with
+            people through digital platforms.
+          </p>
+
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>GitHub Pages</span>
+          </div>
+
+          <a class="project-link"
+             href="https://sayedmohamadrafi.github.io/"
+             target="_blank" rel="noopener noreferrer">
+            Visit Live Website ↗
+          </a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-number">PROJECT 02</div>
+
+          <h3>RAFI BROH Digital Brand</h3>
+
+          <p>
+            A digital brand focused on social media solutions,
+            digital services, online platform management, and
+            technology-related projects.
+          </p>
+
+          <div class="project-tags">
+            <span>Digital Branding</span>
+            <span>Social Media</span>
+            <span>Digital Services</span>
+          </div>
+
+          <a class="project-link"
+             href="https://www.facebook.com/SMR4FI"
+             target="_blank" rel="noopener noreferrer">
+            Visit Facebook Page ↗
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>MY <span>EDUCATION</span></h2>
+        <p>My academic journey.</p>
+      </div>
+
+      <div class="education-card reveal">
+        <h3>Chattogram Polytechnic Institute (CPI)</h3>
+        <p>Student | Bangladesh</p>
         <p>
-          A digital brand focused on social media
-          solutions, digital services and online
-          platform management.
+          Currently continuing my academic journey while developing
+          my knowledge and practical interests in technology.
         </p>
-        <p style="color:#35e6bd;margin-top:15px">
-          Digital Branding • Social Media • Technology
-        </p>
-        <a class="btn"
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOCIAL MEDIA -->
+  <section class="section social-section" id="social">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>CONNECT <span>WITH ME</span></h2>
+        <p>Find me on social media and digital platforms.</p>
+      </div>
+
+      <div class="social-grid">
+
+        <a class="social-card reveal"
            href="https://www.facebook.com/SMR4FI"
-           target="_blank" rel="noopener">
-          Visit Brand ↗
+           target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">📘</span>
+          <strong>Facebook</strong>
+          <small>Connect with me</small>
+        </a>
+
+        <a class="social-card reveal"
+           href="https://www.instagram.com/user_563477"
+           target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">📸</span>
+          <strong>Instagram</strong>
+          <small>Follow my profile</small>
+        </a>
+
+        <a class="social-card reveal"
+           href="https://github.com/sayedmohamadrafi"
+           target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">💻</span>
+          <strong>GitHub</strong>
+          <small>Explore my code</small>
+        </a>
+
+        <a class="social-card reveal"
+           href="https://t.me/CRIMINALRAFI"
+           target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">✈️</span>
+          <strong>Telegram</strong>
+          <small>Message me</small>
+        </a>
+
+        <a class="social-card reveal"
+           href="https://wa.me/8801771203580"
+           target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">💬</span>
+          <strong>WhatsApp</strong>
+          <small>Chat with me</small>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>GET IN <span>TOUCH</span></h2>
+        <p>Let's connect and exchange ideas.</p>
+      </div>
+
+      <div class="contact-box reveal">
+        <h3>Have a Project or Idea?</h3>
+
+        <p>
+          Feel free to contact me for technology discussions,
+          collaborations, or digital project conversations.
+        </p>
+
+        <a class="email-link" href="mailto:ceorafibroh@gmail.com">
+          ceorafibroh@gmail.com
+        </a>
+
+        <a class="btn btn-primary"
+           href="https://wa.me/8801771203580"
+           target="_blank" rel="noopener noreferrer">
+          Message on WhatsApp
         </a>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © <span id="year"></span> <strong>RAFI BROH</strong>.
+      All Rights Reserved.
+    </p>
+    <p>Learning Today. Building Tomorrow. 🚀</p>
+  </footer>
 
-<section id="education">
-  <div class="container">
-    <div class="section-title">
-      <small>MY JOURNEY</small>
-      <h2>Education & <span>Learning</span></h2>
-    </div>
-    <div class="education">
-      <h3>Chattogram Polytechnic Institute</h3>
-      <p>Student | Learning, Exploring and Developing Technical Skills</p>
-    </div>
-  </div>
-</section>
+  <script>
+    // MOBILE MENU
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-<section id="contact">
-  <div class="container">
-    <div class="section-title">
-      <small>GET IN TOUCH</small>
-      <h2>Contact <span>Me</span></h2>
-    </div>
-    <div class="contact-box">
-      <h3>Let's Connect!</h3>
-      <p>
-        Interested in technology, digital projects or collaboration?
-        Feel free to contact me.
-      </p>
-      <a class="btn primary" href="mailto:ceorafibroh@gmail.com">Send Me an Email</a>
-      <br><br>
-      <a class="btn" href="https://github.com/sayedmohamadrafi" target="_blank" rel="noopener">GitHub Profile</a>
-    </div>
-  </div>
-</section>
-</main>
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("active");
+      menuBtn.setAttribute("aria-expanded", isOpen);
+      menuBtn.textContent = isOpen ? "✕" : "☰";
+    });
 
-<footer>
-  © 2026 <span>RAFI BROH</span> | Learning Today. Building Tomorrow.
-</footer>
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      });
+    });
 
-<script>
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+    // TYPING EFFECT
+    const words = [
+      "Technology Enthusiast",
+      "Cybersecurity Learner",
+      "Digital Creator",
+      "Future Developer"
+    ];
 
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-  });
-});
+    const typingElement = document.getElementById("typing");
 
-const phrases = [
-  "Technology Enthusiast",
-  "Cybersecurity Learner",
-  "Digital Creator",
-  "Web Development Explorer"
-];
+    function typeEffect() {
+      const currentWord = words[wordIndex];
 
-let phraseIndex = 0;
-let charIndex = 0;
-let deleting = false;
+      if (deleting) {
+        charIndex--;
+      } else {
+        charIndex++;
+      }
 
-function typeEffect() {
-  const element = document.getElementById("typingText");
-  const current = phrases[phraseIndex];
+      typingElement.textContent = currentWord.substring(0, charIndex);
 
-  element.textContent = current.substring(0, charIndex);
+      let speed = deleting ? 45 : 90;
 
-  if (!deleting && charIndex < current.length) {
-    charIndex++;
-    setTimeout(typeEffect, 90);
-  } else if (deleting && charIndex > 0) {
-    charIndex--;
-    setTimeout(typeEffect, 45);
-  } else {
-    deleting = !deleting;
-    if (!deleting) {
-      phraseIndex = (phraseIndex + 1) % phrases.length;
+      if (!deleting && charIndex === currentWord.length) {
+        deleting = true;
+        speed = 1300;
+      } else if (deleting && charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = 350;
+      }
+
+      setTimeout(typeEffect, speed);
     }
-    setTimeout(typeEffect, 700);
-  }
-}
 
-typeEffect();
-</script>
+    typeEffect();
+
+    // SCROLL REVEAL
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+
+    // CURRENT YEAR
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
