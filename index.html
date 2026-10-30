@@ -4,171 +4,405 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rafi's personal portfolio - Cybersecurity, Technology and Digital Solutions.">
-<title>Rafi | Technology Portfolio</title>
+<meta name="theme-color" content="#080d18">
+<meta name="description" content="RAFI BROH - Cybersecurity, Technology and Digital Creator Portfolio.">
+<title>RAFI BROH | Personal Portfolio</title>
+
 <style>
 :root {
-  --bg:#080d18;
-  --panel:#101a2b;
-  --accent:#32e6c2;
-  --text:#edf4ff;
-  --muted:#9aabc0;
+  --bg:#070b14;
+  --panel:#101a2a;
+  --green:#35e6bd;
+  --cyan:#36cfff;
+  --white:#f1f7ff;
+  --muted:#9aaabe;
+  --border:#23354a;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   background:var(--bg);
-  color:var(--text);
+  color:var(--white);
   font-family:Arial,sans-serif;
   line-height:1.7;
+  overflow-x:hidden;
 }
-a{color:inherit;text-decoration:none}
+a{text-decoration:none;color:inherit}
+.container{width:88%;max-width:1100px;margin:auto}
+
+/* Navigation */
 nav{
-  position:sticky;top:0;z-index:10;
-  background:#080d18ed;
-  border-bottom:1px solid #203047;
-  padding:18px 7%;
+  position:sticky;top:0;z-index:100;
+  background:#070b14ed;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  min-height:72px;
   display:flex;justify-content:space-between;
   align-items:center;
 }
-.logo{font-size:23px;font-weight:bold;color:var(--accent)}
-nav a{margin-left:18px;font-size:14px;color:var(--muted)}
-nav a:hover{color:var(--accent)}
-section{padding:85px 8%;scroll-margin-top:65px}
+.logo{font-size:24px;font-weight:800;color:var(--green)}
+.logo span{color:white}
+.nav-links{display:flex;gap:22px}
+.nav-links a{font-size:13px;color:var(--muted)}
+.nav-links a:hover{color:var(--green)}
+.menu-btn{
+  display:none;background:none;color:var(--green);
+  border:1px solid var(--border);padding:7px 12px;
+  border-radius:5px;font-size:20px;
+}
+
+/* Hero */
 .hero{
-  min-height:82vh;
-  display:flex;flex-direction:column;
-  justify-content:center;
-  background:radial-gradient(ellipse at 80% 30%,#123e3a55,transparent 55%);
+  min-height:87vh;
+  display:flex;align-items:center;
+  position:relative;
+  background:
+  radial-gradient(circle at 80% 35%,#123f3940,transparent 35%),
+  radial-gradient(circle at 15% 80%,#123e6b30,transparent 35%);
 }
-.tag{color:var(--accent);letter-spacing:3px;font-size:13px}
-h1{font-size:clamp(38px,7vw,70px);line-height:1.2;margin:18px 0}
-h1 span{color:var(--accent)}
-.hero p,.about p{color:var(--muted);max-width:650px}
+.hero-content{
+  display:grid;grid-template-columns:1.4fr .8fr;
+  align-items:center;gap:45px;
+}
+.eyebrow{
+  color:var(--green);letter-spacing:4px;
+  font-size:12px;font-weight:bold;
+}
+h1{
+  font-size:clamp(42px,7vw,76px);
+  line-height:1.12;margin:20px 0;
+}
+h1 span{color:var(--green)}
+.typing{color:var(--cyan);font-size:clamp(18px,3vw,25px)}
+.hero p{color:var(--muted);margin-top:17px;max-width:580px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
 .btn{
- display:inline-block;margin-top:25px;
- padding:12px 24px;border:1px solid var(--accent);
- border-radius:6px;color:var(--accent);
+  padding:12px 22px;border-radius:6px;
+  border:1px solid var(--green);
+  color:var(--green);display:inline-block;
+  font-size:14px;transition:.3s;
 }
-.btn:hover{background:var(--accent);color:#071019}
-.heading{font-size:32px;margin-bottom:30px}
-.heading span{color:var(--accent)}
-.grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:18px;
+.btn.primary{background:var(--green);color:#071019}
+.btn:hover{transform:translateY(-3px);box-shadow:0 5px 25px #35e6bd30}
+
+/* Profile */
+.profile-wrap{
+  display:flex;justify-content:center;
+  position:relative;
+}
+.profile{
+  width:min(290px,70vw);
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid var(--green);
+  padding:7px;
+  background:var(--panel);
+  box-shadow:0 0 35px #35e6bd35;
+}
+.profile-glow{
+  position:absolute;width:320px;height:320px;
+  border:1px dashed #35e6bd65;
+  border-radius:50%;
+  animation:rotate 25s linear infinite;
+}
+@keyframes rotate{to{transform:rotate(360deg)}}
+
+/* Sections */
+section{padding:85px 0;scroll-margin-top:70px}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title small{color:var(--green);letter-spacing:3px}
+.section-title h2{font-size:34px;margin-top:8px}
+.section-title h2 span{color:var(--green)}
+.about-text{
+  max-width:800px;margin:auto;text-align:center;
+  color:var(--muted);font-size:16px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 .card{
- background:var(--panel);padding:25px;
- border:1px solid #23364c;border-radius:10px;
- transition:.25s;
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:25px;border-radius:12px;
+  transition:.3s;
 }
-.card:hover{border-color:var(--accent);transform:translateY(-4px)}
-.card h3{color:var(--accent);margin-bottom:10px}
+.card:hover{
+  border-color:var(--green);
+  transform:translateY(-5px);
+}
+.card .symbol{font-size:28px;margin-bottom:12px}
+.card h3{color:var(--green);margin-bottom:10px;font-size:19px}
 .card p{color:var(--muted);font-size:14px}
-footer{
- padding:30px;text-align:center;
- color:var(--muted);border-top:1px solid #203047;
+
+/* Skills */
+.skill{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:8px;padding:15px;
+  color:var(--white);font-size:14px;
 }
-footer span{color:var(--accent)}
-@media(max-width:600px){
- nav{padding:14px 5%;flex-wrap:wrap;gap:12px}
- nav a{margin-left:9px;font-size:12px}
- section{padding:65px 6%}
+
+/* Education */
+.education{
+  max-width:700px;margin:auto;
+  border-left:2px solid var(--green);
+  padding:5px 0 5px 25px;
+}
+.education h3{color:var(--green)}
+.education p{color:var(--muted);font-size:14px}
+
+/* Contact */
+.contact-box{
+  max-width:650px;margin:auto;text-align:center;
+  background:var(--panel);
+  padding:35px 20px;border-radius:12px;
+  border:1px solid var(--border);
+}
+.contact-box p{color:var(--muted);margin:12px 0 20px}
+
+footer{
+  text-align:center;padding:28px 10px;
+  border-top:1px solid var(--border);
+  color:var(--muted);font-size:13px;
+}
+footer span{color:var(--green)}
+
+@media(max-width:700px){
+  .container{width:90%}
+  .nav-inner{min-height:65px}
+  .menu-btn{display:block}
+  .nav-links{
+    display:none;position:absolute;top:65px;left:0;
+    width:100%;padding:20px;
+    background:#0b1422;
+    flex-direction:column;gap:15px;
+    border-bottom:1px solid var(--border);
+  }
+  .nav-links.show{display:flex}
+  .hero{padding:65px 0;min-height:auto}
+  .hero-content{grid-template-columns:1fr;text-align:center;gap:40px}
+  .hero p{margin:15px auto}
+  .actions{justify-content:center}
+  .profile{width:220px}
+  .profile-glow{width:245px;height:245px}
+  section{padding:65px 0}
+  .section-title h2{font-size:28px}
 }
 </style>
 </head>
+
 <body>
 
 <nav>
-  <div class="logo">RAFI.DEV</div>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">RAFI<span>BROH.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
+<main>
 <section class="hero" id="home">
-  <div class="tag">WELCOME TO MY DIGITAL WORLD</div>
-  <h1>Hello, I'm <span>Rafi.</span></h1>
-  <h2>Technology Enthusiast & Digital Creator</h2>
-  <p>Exploring Cybersecurity, Digital Technology,
-  Web Development and Social Media Solutions.</p>
-  <div>
-    <a class="btn" href="#projects">Explore My Work →</a>
+  <div class="container hero-content">
+    <div>
+      <div class="eyebrow">WELCOME TO MY DIGITAL WORLD</div>
+      <h1>I'm <span>RAFI BROH</span></h1>
+      <div class="typing">
+        <span id="typingText">Technology Enthusiast</span>
+      </div>
+      <p>
+        Passionate about Cybersecurity, Digital Technology,
+        Social Media Management and Web Development.
+        Exploring ideas, learning new skills and building
+        meaningful digital projects.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore My Work</a>
+        <a class="btn" href="#contact">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="profile-wrap">
+      <div class="profile-glow"></div>
+      <img class="profile"
+           src="rafi-broh.png"
+           alt="RAFI BROH Profile Picture">
+    </div>
   </div>
 </section>
 
-<section class="about" id="about">
-  <h2 class="heading">About <span>Me</span></h2>
-  <p>
-    I'm Rafi, a student at Chattogram Polytechnic Institute (CPI)
-    and a technology enthusiast passionate about Cybersecurity,
-    Digital Technology and Web Development.
-    I enjoy learning new technologies, solving problems
-    and building meaningful digital projects.
-  </p>
+<section id="about">
+  <div class="container">
+    <div class="section-title">
+      <small>WHO AM I?</small>
+      <h2>About <span>Me</span></h2>
+    </div>
+    <p class="about-text">
+      I'm Rafi, a student at Chattogram Polytechnic Institute (CPI)
+      and a technology enthusiast. I'm interested in Cybersecurity,
+      Digital Communication, Social Media Management and Web Development.
+      I enjoy exploring technology, solving problems and continuously
+      improving my skills through learning and practical projects.
+      My goal is to grow as a technology professional and create
+      useful digital solutions.
+    </p>
+  </div>
 </section>
 
 <section id="skills">
-  <h2 class="heading">My <span>Skills</span></h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Cybersecurity</h3>
-      <p>Exploring cyber safety, security concepts and ethical hacking.</p>
+  <div class="container">
+    <div class="section-title">
+      <small>WHAT I EXPLORE</small>
+      <h2>My <span>Skills & Interests</span></h2>
     </div>
-    <div class="card">
-      <h3>Web Development</h3>
-      <p>Learning HTML, CSS and JavaScript.</p>
-    </div>
-    <div class="card">
-      <h3>Social Media</h3>
-      <p>Social Media Management and Digital Communication.</p>
-    </div>
-    <div class="card">
-      <h3>Digital Technology</h3>
-      <p>Exploring online platforms and digital solutions.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="symbol">🔐</div>
+        <h3>Cybersecurity</h3>
+        <p>Exploring cyber safety, security awareness and ethical hacking concepts.</p>
+      </div>
+      <div class="card">
+        <div class="symbol">💻</div>
+        <h3>Web Development</h3>
+        <p>Learning HTML, CSS, JavaScript and building responsive websites.</p>
+      </div>
+      <div class="card">
+        <div class="symbol">📱</div>
+        <h3>Social Media</h3>
+        <p>Social Media Management, platform support and digital communication.</p>
+      </div>
+      <div class="card">
+        <div class="symbol">🌐</div>
+        <h3>Digital Technology</h3>
+        <p>Exploring online platforms, digital tools and technology solutions.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="projects">
-  <h2 class="heading">My <span>Projects</span></h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Personal Portfolio</h3>
-      <p>My personal website and professional profile.</p>
+  <div class="container">
+    <div class="section-title">
+      <small>MY WORK</small>
+      <h2>Featured <span>Projects</span></h2>
     </div>
-    <div class="card">
-      <h3>Digital Projects</h3>
-      <p>My experiments and projects in digital technology.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="symbol">🖥️</div>
+        <h3>Personal Portfolio</h3>
+        <p>A personal website showcasing my identity, skills and learning journey.</p>
+      </div>
+      <div class="card">
+        <div class="symbol">🚀</div>
+        <h3>RAFI BROH</h3>
+        <p>A digital brand focused on social media solutions and online services.</p>
+      </div>
+      <div class="card">
+        <div class="symbol">⚙️</div>
+        <h3>Web Experiments</h3>
+        <p>Personal learning projects and experiments with web technologies.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Social Media Solutions</h3>
-      <p>Digital communication and social media projects.</p>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-title">
+      <small>MY JOURNEY</small>
+      <h2>Education & <span>Learning</span></h2>
+    </div>
+    <div class="education">
+      <h3>Chattogram Polytechnic Institute</h3>
+      <p>Student | Learning, Exploring and Developing Technical Skills</p>
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <h2 class="heading">Contact <span>Me</span></h2>
-  <div class="card">
-    <h3>Let's Connect!</h3>
-    <p>Interested in technology, digital projects or collaboration?</p>
-    <a class="btn" href="https://github.com/sayedmohamadrafi">
-      GitHub Profile →
-    </a>
-    <a class="btn" href="mailto:ceorafibroh@gmail.com">
-      Email Me →
-    </a>
+  <div class="container">
+    <div class="section-title">
+      <small>GET IN TOUCH</small>
+      <h2>Contact <span>Me</span></h2>
+    </div>
+    <div class="contact-box">
+      <h3>Let's Connect!</h3>
+      <p>
+        Interested in technology, digital projects or collaboration?
+        Feel free to contact me.
+      </p>
+      <a class="btn primary" href="mailto:ceorafibroh@gmail.com">Send Me an Email</a>
+      <br><br>
+      <a class="btn" href="https://github.com/sayedmohamadrafi" target="_blank" rel="noopener">GitHub Profile</a>
+    </div>
   </div>
 </section>
+</main>
 
 <footer>
-  © 2026 <span>RAFI</span> | Learning Today. Building Tomorrow.
+  © 2026 <span>RAFI BROH</span> | Learning Today. Building Tomorrow.
 </footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+  });
+});
+
+const phrases = [
+  "Technology Enthusiast",
+  "Cybersecurity Learner",
+  "Digital Creator",
+  "Web Development Explorer"
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+  const element = document.getElementById("typingText");
+  const current = phrases[phraseIndex];
+
+  element.textContent = current.substring(0, charIndex);
+
+  if (!deleting && charIndex < current.length) {
+    charIndex++;
+    setTimeout(typeEffect, 90);
+  } else if (deleting && charIndex > 0) {
+    charIndex--;
+    setTimeout(typeEffect, 45);
+  } else {
+    deleting = !deleting;
+    if (!deleting) {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+    setTimeout(typeEffect, 700);
+  }
+}
+
+typeEffect();
+</script>
 
 </body>
 </html>
