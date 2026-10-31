@@ -7,7 +7,7 @@
 
   <meta name="google-site-verification" content="-IIL9Mt98-uxbO1fYuxOmFGdc_pDIlQy2WpTDuy6lEY">
 
-  <title>RAFI BROH | Premium Cybersecurity & Technology Portfolio</title>
+  <title>RAFI BROH | Cybersecurity & Technology Portfolio</title>
   <meta name="description" content="Welcome to RAFI BROH's personal portfolio. Explore cybersecurity interests, web development projects, digital technology and professional journey.">
   <meta name="keywords" content="RAFI BROH, Cybersecurity, Technology, Web Development, Portfolio, Bangladesh">
   <meta name="author" content="RAFI BROH">
@@ -148,12 +148,13 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 21px;
       font-weight: 800;
-      color: var(--green);
+      color: var(--text);
       letter-spacing: 1px;
     }
 
-    .logo span {
-      color: var(--text);
+    .logo .brand-name,
+    .logo .logo-dot {
+      color: var(--green);
     }
 
     .nav-links {
@@ -614,7 +615,7 @@
       box-shadow: var(--glow);
     }
 
-    /* CONTACT FORM */
+    /* CONTACT */
 
     .contact-layout {
       max-width: 900px;
@@ -660,7 +661,8 @@
       margin-bottom: 7px;
     }
 
-    .form-group input, .form-group textarea {
+    .form-group input,
+    .form-group textarea {
       width: 100%;
       background: #09121b;
       border: 1px solid var(--border);
@@ -671,7 +673,8 @@
       font-size: 13px;
     }
 
-    .form-group input:focus, .form-group textarea:focus {
+    .form-group input:focus,
+    .form-group textarea:focus {
       border-color: var(--green);
       box-shadow: 0 0 12px rgba(0,255,156,.08);
     }
@@ -702,29 +705,6 @@
     .footer-tagline {
       margin-top: 7px;
       color: var(--cyan);
-    }
-
-    /* BACK TO TOP */
-
-    #topBtn {
-      position: fixed;
-      bottom: 23px;
-      right: 20px;
-      width: 43px;
-      height: 43px;
-      border: 1px solid var(--green);
-      border-radius: 8px;
-      background: var(--surface);
-      color: var(--green);
-      font-size: 20px;
-      cursor: pointer;
-      display: none;
-      z-index: 900;
-      box-shadow: var(--glow);
-    }
-
-    #topBtn.show {
-      display: block;
     }
 
     /* LOADER */
@@ -863,7 +843,8 @@
         padding: 75px 0;
       }
 
-      .skills-grid, .projects-grid {
+      .skills-grid,
+      .projects-grid {
         grid-template-columns: 1fr;
       }
 
@@ -878,13 +859,19 @@
         font-size: 11px;
       }
 
-      .panel, .project-card {
+      .panel,
+      .project-card {
         padding: 22px;
       }
 
       .intro-items {
         justify-content: center;
         text-align: center;
+      }
+
+      .image-label {
+        right: 0;
+        font-size: 10px;
       }
     }
 
@@ -915,7 +902,10 @@
   <!-- NAVIGATION -->
   <header>
     <nav class="container">
-      <a href="#" class="logo">RAFI <span>BROH</span><span class="logo-dot">.</span</a>
+      <a href="#home" class="logo">
+        RAFI <span class="brand-name">BROH</span><span class="logo-dot">.</span>
+      </a>
+
       <button class="menu-btn" id="menuBtn"
         aria-label="Open navigation" aria-expanded="false">☰</button>
 
@@ -1348,8 +1338,6 @@
     <p class="footer-tagline">Learning Today. Building Tomorrow.</p>
   </footer>
 
-  <button id="topBtn" aria-label="Back to top">↑</button>
-
   <script>
     // MOBILE NAVIGATION
 
@@ -1466,21 +1454,6 @@
           loader.style.display = "none";
         }, 600);
       }
-    });
-
-    // BACK TO TOP
-
-    const topBtn = document.getElementById("topBtn");
-
-    window.addEventListener("scroll", () => {
-      topBtn.classList.toggle("show", window.scrollY > 400);
-    });
-
-    topBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
     });
   </script>
 
