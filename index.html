@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -778,82 +777,6 @@
       transform: translateY(0);
     }
 
-    /* WELCOME VOICE POPUP */
-
-    #welcomeVoicePopup {
-      position: fixed;
-      inset: 0;
-      z-index: 99990;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background: rgba(0, 5, 10, .88);
-      backdrop-filter: blur(10px);
-    }
-
-    #welcomeVoicePopup.show {
-      display: flex;
-    }
-
-    .voice-box {
-      width: min(430px, 100%);
-      padding: 32px 25px;
-      text-align: center;
-      background: linear-gradient(145deg, #101923, #07110e);
-      border: 1px solid var(--green);
-      border-radius: 16px;
-      box-shadow: 0 0 35px rgba(0,255,156,.18);
-    }
-
-    .voice-icon {
-      font-size: 42px;
-      margin-bottom: 14px;
-    }
-
-    .voice-box h2 {
-      color: var(--green);
-      font-family: 'Orbitron', sans-serif;
-      font-size: 21px;
-      margin-bottom: 12px;
-    }
-
-    .voice-box p {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 22px;
-    }
-
-    .voice-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .voice-buttons button {
-      min-width: 135px;
-    }
-
-    .voice-buttons button:disabled {
-      opacity: .7;
-      cursor: wait;
-    }
-
-    .voice-close {
-      margin-top: 17px;
-      padding: 6px 12px;
-      color: var(--muted);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    .voice-close:hover {
-      color: var(--green);
-    }
-
     /* RESPONSIVE */
 
     @media(max-width: 850px) {
@@ -974,6 +897,9 @@
     <div class="loader-line"></div>
     <p>INITIALIZING DIGITAL EXPERIENCE</p>
   </div>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="backgroundMusic" src="background.mp3" loop preload="auto"></audio>
 
   <!-- NAVIGATION -->
   <header>
@@ -1405,41 +1331,6 @@
     </div>
   </section>
 
-  <!-- WELCOME VOICE POPUP -->
-
-  <div id="welcomeVoicePopup" role="dialog"
-    aria-modal="true" aria-labelledby="voiceTitle">
-
-    <div class="voice-box">
-      <div class="voice-icon">🎙️</div>
-
-      <h2 id="voiceTitle">WELCOME TO RAFI BROH</h2>
-
-      <p>
-        Enter my digital world and explore my portfolio.
-        Enable sound to hear the welcome message.
-      </p>
-
-      <div class="voice-buttons">
-        <button type="button" class="btn btn-primary"
-          id="enableVoiceBtn">
-          🔊 ENABLE SOUND
-        </button>
-
-        <button type="button" class="btn btn-outline"
-          id="stopVoiceBtn" hidden>
-          🔇 STOP VOICE
-        </button>
-      </div>
-
-      <button type="button" class="voice-close"
-        id="closeVoiceBtn">
-        Continue Without Sound
-      </button>
-    </div>
-
-  </div>
-
   <!-- FOOTER -->
   <footer>
     <p>
@@ -1450,6 +1341,29 @@
   </footer>
 
   <script>
+    // BACKGROUND MUSIC SYSTEM
+
+    const backgroundMusic = document.getElementById("backgroundMusic");
+
+    backgroundMusic.loop = true;
+    backgroundMusic.volume = 0.5;
+
+    // Try autoplay when the page loads
+    function playBackgroundMusic() {
+      if (backgroundMusic.paused) {
+        backgroundMusic.play().catch(() => {
+          console.log("Autoplay blocked. Waiting for user interaction.");
+        });
+      }
+    }
+
+    window.addEventListener("load", playBackgroundMusic);
+
+    // Start music after the first user interaction if autoplay is blocked
+    document.addEventListener("click", playBackgroundMusic, { once: true });
+    document.addEventListener("touchstart", playBackgroundMusic, { once: true });
+
+
     // MOBILE NAVIGATION
 
     const menuBtn = document.getElementById("menuBtn");
@@ -1468,6 +1382,7 @@
         menuBtn.textContent = "☰";
       });
     });
+
 
     // TYPING ANIMATION
 
@@ -1506,6 +1421,7 @@
 
     typeEffect();
 
+
     // SCROLL REVEAL
 
     const revealObserver = new IntersectionObserver(entries => {
@@ -1520,6 +1436,7 @@
     document.querySelectorAll(".reveal").forEach(element => {
       revealObserver.observe(element);
     });
+
 
     // CONTACT FORM - EMAIL APP
 
@@ -1548,10 +1465,12 @@
         subject + "&body=" + body;
     });
 
+
     // CURRENT YEAR
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
 
     // LOADING SCREEN
 
@@ -1565,107 +1484,6 @@
           loader.style.display = "none";
         }, 600);
       }
-    });
-
-    // RAFI BROH WELCOME VOICE SYSTEM
-
-    const welcomePopup = document.getElementById("welcomeVoicePopup");
-    const enableVoiceBtn = document.getElementById("enableVoiceBtn");
-    const stopVoiceBtn = document.getElementById("stopVoiceBtn");
-    const closeVoiceBtn = document.getElementById("closeVoiceBtn");
-
-    const welcomeMessage =
-      "Welcome to RAFI BROH! " +
-      "Your digital world, our expertise. " +
-      "Explore my personal portfolio and digital services. " +
-      "For solutions to any social media problems, " +
-      "feel free to contact me. Let's connect!";
-
-    // Show popup after the loading screen
-
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        welcomePopup.classList.add("show");
-      }, 700);
-    });
-
-    // Select an available English voice
-
-    function getWelcomeVoice() {
-      const voices = window.speechSynthesis.getVoices();
-
-      return (
-        voices.find(voice =>
-          /en-US/i.test(voice.lang) &&
-          /David|Guy|Mark|Daniel|Alex/i.test(voice.name)
-        ) ||
-        voices.find(voice => /en-US/i.test(voice.lang)) ||
-        voices.find(voice => /en/i.test(voice.lang)) ||
-        null
-      );
-    }
-
-    // Play welcome message
-
-    enableVoiceBtn.addEventListener("click", () => {
-      if (!("speechSynthesis" in window)) {
-        alert("Sorry! Your browser does not support voice playback.");
-        return;
-      }
-
-      window.speechSynthesis.cancel();
-
-      const speech = new SpeechSynthesisUtterance(welcomeMessage);
-      const selectedVoice = getWelcomeVoice();
-
-      if (selectedVoice) {
-        speech.voice = selectedVoice;
-      }
-
-      speech.lang = selectedVoice ? selectedVoice.lang : "en-US";
-      speech.rate = 0.88;
-      speech.pitch = 0.75;
-      speech.volume = 1;
-
-      speech.onstart = () => {
-        enableVoiceBtn.textContent = "🔊 PLAYING...";
-        enableVoiceBtn.disabled = true;
-        stopVoiceBtn.hidden = false;
-      };
-
-      speech.onend = () => {
-        enableVoiceBtn.textContent = "↻ PLAY AGAIN";
-        enableVoiceBtn.disabled = false;
-        stopVoiceBtn.hidden = true;
-      };
-
-      speech.onerror = () => {
-        enableVoiceBtn.textContent = "🔊 TRY AGAIN";
-        enableVoiceBtn.disabled = false;
-        stopVoiceBtn.hidden = true;
-      };
-
-      window.speechSynthesis.speak(speech);
-    });
-
-    // Stop voice
-
-    stopVoiceBtn.addEventListener("click", () => {
-      window.speechSynthesis.cancel();
-
-      enableVoiceBtn.textContent = "↻ PLAY AGAIN";
-      enableVoiceBtn.disabled = false;
-      stopVoiceBtn.hidden = true;
-    });
-
-    // Close popup
-
-    closeVoiceBtn.addEventListener("click", () => {
-      if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-      }
-
-      welcomePopup.classList.remove("show");
     });
 
   </script>
